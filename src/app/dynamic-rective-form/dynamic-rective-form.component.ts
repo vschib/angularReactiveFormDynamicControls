@@ -38,6 +38,8 @@ this.addNewDFGControl(row_1);
 deleteRow(index){
 if(this.propDFG.length>1){
   this.propDFG.removeAt(index);
+} else {
+  alert("Validation: Atleast one record should be present!")
 }
 }
 

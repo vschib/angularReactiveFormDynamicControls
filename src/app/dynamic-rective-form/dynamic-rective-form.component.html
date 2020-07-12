@@ -2,7 +2,7 @@
 <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
   <mat-label>Department Name</mat-label>
   <mat-form-field class="dept-name">
-    <input matInput formContolName="deptName">
+    <input matInput formControlName="deptName">
   </mat-form-field>
   <table>
     <thead>
@@ -30,17 +30,17 @@
       </td>
        <td>
         <!-- <mat-form-field> -->
-        <input matInput formContolName="id">
+        <input matInput formControlName="id">
       <!-- </mat-form-field> -->
       </td>
      <td>
-        <input matInput formContolName="name">
+        <input matInput formControlName="name">
       </td>
       <td>
-        <input matInput formContolName="city">
+        <input matInput formControlName="city">
       </td>
       <td>
-        <input matInput formContolName="zip">
+        <input matInput formControlName="zip">
       </td> 
     </tr>
     <tr>
@@ -50,6 +50,9 @@
     </tr>
   </tbody>
   </table>
-
+<div class="buttons-row">
+  <div *ngIf="!dynamicForm.valid" class="err"> Submit will be enabled when all input field  have values</div>
+<button [disabled]="!dynamicForm.valid">Submit</button>
+</div>
 
 </form>
