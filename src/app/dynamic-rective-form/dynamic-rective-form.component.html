@@ -1,0 +1,57 @@
+<p>
+  safe
+</p>
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <mat-label>Department Name</mat-label>
+  <mat-form-field class="dept-name">
+    <input matInput formContolName="deptName">
+  </mat-form-field>
+  <table>
+    <thead>
+      <th class="action">
+        Action
+      </th>
+      <th class="id">
+        ID
+      </th>
+      <th class="name">
+        Name
+      </th>
+      <th class="city">
+        City
+      </th>
+      <th class="zip">
+        Zip
+      </th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let obj of propDFG.controls; let i =index;" [formGroup]="obj">
+      <td (click)="deleteRow(i)">
+        <mat-icon class="delete-icon">
+          delete</mat-icon>
+      </td>
+       <td>
+        <!-- <mat-form-field> -->
+        <input matInput formContolName="id">
+      <!-- </mat-form-field> -->
+      </td>
+     <td>
+        <input matInput formContolName="name">
+      </td>
+      <td>
+        <input matInput formContolName="city">
+      </td>
+      <td>
+        <input matInput formContolName="zip">
+      </td> 
+    </tr>
+    <tr>
+      <td>
+        <mat-icon class="add-icon" (click)="addNewRow()">add</mat-icon>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+</form>
