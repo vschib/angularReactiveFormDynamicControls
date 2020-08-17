@@ -1,0 +1,72 @@
+
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">  
+  <div>
+    <mat-label>Department Name</mat-label>
+    <mat-form-field class="dept-name">
+      <input matInput formControlName="deptName">
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" type="button" (click)="addNew()">
+      <mat-icon class="add-icon" >add</mat-icon>
+      Add New Row
+    </button>
+    
+  </div>
+  <div>
+  <table mat-table class="table table-striped table-hover" [dataSource]="dataSource">
+    <ng-container matColumnDef="action">
+      <th class="header action" mat-header-cell *matHeaderCellDef>
+        Action
+      </th>
+      <td mat-cell *matCellDef="let dynamicEmpList; let i=index;" [formGroup]="dynamicEmpList">
+        <mat-icon class="delete-icon" (click)="deleteRow(i)">
+          delete_forever</mat-icon>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <th class="header id" mat-header-cell *matHeaderCellDef>
+        ID
+      </th>
+      <td mat-cell *matCellDef="let dynamicEmpList" [formGroup]="dynamicEmpList">
+        <input matInput formControlName="id" [ngClass]="{'err-field': dynamicEmpList.controls.id.errors}">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th class="header name" mat-header-cell *matHeaderCellDef>
+        Name
+      </th>
+      <td mat-cell *matCellDef="let dynamicEmpList" [formGroup]="dynamicEmpList">
+        <input matInput formControlName="name" [ngClass]="{'err-field': dynamicEmpList.controls.name.errors}">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+      <th class="header city" mat-header-cell *matHeaderCellDef>
+        City
+      </th>
+      <td mat-cell *matCellDef="let dynamicEmpList" [formGroup]="dynamicEmpList">
+        <input matInput formControlName="city" [ngClass]="{'err-field': dynamicEmpList.controls.city.errors}">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="zip">
+      <th class="header zip" mat-header-cell *matHeaderCellDef>
+        City
+      </th>
+      <td mat-cell *matCellDef="let dynamicEmpList" [formGroup]="dynamicEmpList">
+        <input matInput formControlName="zip" [ngClass]="{'err-field': dynamicEmpList.controls.zip.errors}">
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displaycols"></tr>
+    <tr mat-row *matRowDef="let row; columns: displaycols"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[2,3,4,5,6,7,8,9,10]" showFirstLastButtons [pageSize]="2"></mat-paginator>
+</div>
+ 
+<div class="buttons-row">
+  <div *ngIf="!dynamicForm.valid" class="err"> Submit will be enabled when all input field  have values</div>
+<button [disabled]="!dynamicForm.valid" type="submit">Submit</button>
+</div>
+
+</form>

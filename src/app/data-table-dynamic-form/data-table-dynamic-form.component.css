@@ -1,0 +1,107 @@
+form{
+    width:90%;
+    margin:15px;
+    padding:20px;
+
+}
+.dept-name {
+    margin-left: 30px;
+    width: 30%;
+}
+
+input {
+    border-bottom: solid 1px;
+}
+
+mat-label {
+    color: gray;
+}
+
+table {
+    width: 90%
+}
+
+th {
+    background-color: lightsteelblue;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(228, 206, 206);
+    border-collapse: collapse;
+    padding: 5px;    
+}
+
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+table {
+    margin-top: 30px;
+}
+
+td {
+    text-align: center;
+}
+.action{
+    width:5%;
+    }
+.id {
+    width: 5%;
+}
+
+.name {
+    width: 30%;
+}
+
+.city {
+    width: 20%;
+}
+
+.zip {
+    width: 10%;
+}
+.delete-icon{
+    color:red;
+    cursor: pointer;
+}
+.add-icon{
+    color:green;
+    cursor: pointer;
+    size: 10px;
+}
+
+button {
+    height: 35px;
+    margin-top: 10px;
+    width: 20%;
+}
+
+.err {
+    margin-top: 15px;
+    color: red;
+    font-size: 15px;
+}
+.mat-header-cell{
+    background: #ccc;
+    border-right: 1px solid #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 600;
+}
+.mat-cell{
+    border-right: 1px solid #ffffff;
+}
+td .mat-cell:last-child{
+    border-right:none;
+}
+.err-field{
+    border:red;
+    border-style: solid;
+    border-width: thin;
+}

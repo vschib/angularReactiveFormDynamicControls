@@ -9,13 +9,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule, MatSortModule, MatTableModule, MatTooltipModule } from '@angular/material';
 import { DynamicRectiveFormComponent } from './dynamic-rective-form/dynamic-rective-form.component';
+import { DataTableDynamicFormComponent } from './data-table-dynamic-form/data-table-dynamic-form.component';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DynamicRectiveFormComponent
+    DynamicRectiveFormComponent,
+    DataTableDynamicFormComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,10 @@ import { DynamicRectiveFormComponent } from './dynamic-rective-form/dynamic-rect
     FormsModule, ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatPaginatorModule, MatSortModule, MatTableModule, MatTooltipModule,
+    RxReactiveFormsModule,
+    MatButtonModule,
 
   ],
   providers: [],
